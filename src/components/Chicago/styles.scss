@@ -1,0 +1,70 @@
+.chicago {
+    padding-top: 100px;
+    padding-bottom: 200px;
+
+    &__container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: flex;
+        gap: 40px;
+
+        background-color: var(--main-green);
+    }
+    &__about {
+        padding-left: 30px;
+        flex: 1;
+    }
+
+    &__title {
+        color: var(--main-yellow);
+    }
+    &__sub-title {
+        color: white;
+    }
+
+    &__text {
+        margin: 0;
+        font-family: var(--font-family-main);
+        font-size: 20px;
+        font-weight: 500;
+        text-align: justify;
+        color: white;
+    }
+
+    &__imgs {
+        position: relative;
+        flex: 2;
+    }
+
+    &__img {
+        object-fit: cover;
+        object-position: right;
+        position: absolute;
+        border-radius: 10px;
+
+        &--first {
+            top: 30%;
+            right: 40%;
+        }
+        &--second {
+            top: -10%;
+            right: 30px;
+        }
+    }
+
+    @media screen and (max-width: $width-tablet) {
+        &__container {
+            flex-wrap: wrap;
+        }
+
+        &__imgs {
+            display: none;
+        }
+
+        &__about {
+            width: 100%;
+            flex: none;
+            padding-right: 30px;
+        }
+    }
+}

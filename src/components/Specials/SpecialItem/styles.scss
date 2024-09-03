@@ -1,0 +1,91 @@
+.special-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__img {
+        display: block;
+
+        object-fit: cover;
+        background-color: var(--highlight-dark);
+        width: 100%;
+        height: 185px;
+        max-height: 185px;
+    }
+
+    &__content {
+        padding: 25px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    &__price {
+        color: var(--secondary-peach);
+    }
+
+    &__name {
+        margin: 0;
+        font-family: var(--font-family-headlines);
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    &__description {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: var(--highlight-dark);
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: fit-content;
+    }
+
+    &__link::after {
+        content: "";
+        background-image: url("./../../../assets/images/moto.svg");
+        display: block;
+        width: 16px;
+        height: 11px;
+        position: absolute;
+        transition: 100ms;
+        right: -30px;
+    }
+
+    &__link::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        background-color: var(--highlight-dark);
+        left: 0;
+        bottom: -2px;
+        transition: 100ms;
+    }
+
+    &__link:hover::before,
+    &__link:focus::before {
+        width: 100%;
+    }
+
+    &__link:active {
+        opacity: 0.8;
+    }
+
+    @media screen and (max-width: $width-tablet) {
+
+    }
+}

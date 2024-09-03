@@ -1,0 +1,29 @@
+.testimonial-item {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--highlight-gray);
+    width: 200px;
+    height: 150px;
+
+    &__raiting {
+        margin-bottom: 10px;
+    }
+    &__author {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        font-family: var(--font-family-main);
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--highlight-dark);
+        margin-bottom: 10px;
+    }
+
+    &__comment {
+        font-family: var(--font-family-main);
+        width: auto;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,118 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+
+    &__logo {
+        width: 148px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        gap: 28px;
+        font-family: var(--font-family-main);
+    }
+
+    &__link {
+        color: var(--highlight-dark);
+        font-weight: 600;
+    }
+
+    &__link::after {
+        content: "";
+        background-color: var(--highlight-dark);
+    }
+
+    &__menu {
+        display: none;
+    }
+
+    @media screen and (max-width: $width-tablet) {
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 10;
+        &__menu {
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--highlight-dark);
+                top: 0;
+                left: 0;
+                transition: 300ms;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--highlight-dark);
+                bottom: 0;
+                left: 0;
+                transition: 300ms;
+            }
+
+            &-item {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: var(--highlight-dark);
+                top: calc(50% - 1px);
+                left: 0;
+                transition: 300ms;
+            }
+            &:hover {
+                opacity: 0.5;
+            }
+
+            &--open {
+                &::after {
+                    top: 50%;
+                    left: 0;
+                    transform: rotate(45deg);
+                }
+                &::before {
+                    top: 50%;
+                    left: 0;
+                    transform: rotate(-45deg);
+                }
+                .header__menu-item {
+                    opacity: 0;
+                }
+            }
+        }
+        &__navbar {
+            position: absolute;
+            width: 100%;
+            right: -100%;
+            transition: 300ms;
+            background-color: white;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            top: 100%;
+
+            &--open {
+                right: 0;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
